@@ -6,7 +6,7 @@ class Account {
   double accountBalance;
   final double? lastMonthBalance;
 
-  void setBalanceAfterTransaction(Transaction transaction) {
+  Future<void> setBalanceAfterTransaction(Transaction transaction) async {
     switch (transaction.transactionType) {
       case TransactionType.income:
         accountBalance += transaction.amount;
